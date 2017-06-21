@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+	<div id="container">
+		<div id="logoHolder"></div>
+		<div id="focusContainer">
+			<img id="heroBg" src="images/website_photo_new.png"/>
+			<div class="copy">
+				<h1>House of Flashtalking</h1>
+				<img src="images/rating.png"/>
+				<h2>New to the delights of Flashtalking, here is a bite<br> sized primer on the 2017 season in ad tech and data</h2>
+				<p>At the dark heart of the tangled web of consumer data, media bias intrigue and walled garden chicanery of today&#39;s digital advertising, sits Flashtalking, the ultimate provider of independent connected analytics and data driven creative.
+				<br><br>
+				The story centres on business advantage for today&#39;s digital advertisers. Flashtalking is a data activation platform providing advertisers with the ultimate power to connect user identities across devices and key digital partners (Ad Server, DMP, DSP, Ad Verification, Site Analytics). 
+				<br><br>
+				The outcome is best in class actionable insights from transparent, fully cleansed data - a new standard for digital advertising analytics only available from Flashtalking.
+				<br><br>
+				Watch our critically acclaimed series of data driven creative and get in touch to learn more about connected analytics. You won&#39;t look back.
+				</p>
+				<a href="mailto:infouk@flashtalking.com"><div id="play"><p><b>PLAY WITH US</b></p></div></a>
+				<div id="copyClose">[x]</div>
+			</div>
+			<div id="slider">
+				<span id="rowCont">
+					<span id="blockRow">
+						<div class="campBlock" id="block1"><a class="campBlock" href="http://www.flashtalking.com/showcase/video/coke/" target="_blank"></a></div>
+						<div class="campBlock" id="block2"><a class="campBlock" href="http://www.flashtalking.com/showcase/dynamic/m_and_s_summer/" target="_blank"></a></div>
+						<div class="campBlock" id="block3"><a class="campBlock" href="http://www.flashtalking.com/showcase/datadriven/justeat" target="_blank"></a></div>
+						<div class="campBlock" id="block4"><a class="campBlock" href="http://flashtalking.com/showcase/Monarch_Attribution.pdf" target="_blank"></a></div>
+						<div class="campBlock" id="block5"><a class="campBlock" href="http://www.flashtalking.com/showcase/video/peugeot/" target="_blank"></a></div>
+						<div class="campBlock" id="block6"><a class="campBlock" href="http://www.flashtalking.com/showcase/datadriven/GilletteLiveSwipe/" target="_blank"></a></div>
+						<div class="campBlock" id="block7"><a class="campBlock" href="http://www.flashtalking.com/showcase/datadriven/cathaypacific" target="_blank"></a></div>
+						<div class="campBlock" id="block8"><a class="campBlock" href="http://flashtalking.com/showcase/video/mini/" target="_blank"></a></div>
+						<div class="campBlock" id="block9"><a class="campBlock" href="http://www.flashtalking.com/showcase/datadriven/amex/" target="_blank"></a></div>
+						<div class="campBlock" id="block10"><a class="campBlock" href="http://www.flashtalking.com/showcase/datadriven/monarch/" target="_blank"></a></div>
+					</span>
+					
+				</span>
+				<div id="navContainer">
+						<div class="navControl" id="navLeft"><img src="images/navLeft.png"/></div>
+						<div class="navControl" id="navRight"><img src="images/navRight.png"/></div>
+				</div>
+			</div>
+		<div id="moreInfo">Questions? <a href="tel:02033277820">Call 0203 327 7820</a> or <a href="mailto:infouk@flashtalking.com"> Email infouk@flashtalking.com</a></div>
+		</div>	
+		
+		
+	</div>
+	<script>	
+
+		var blocks = document.getElementsByClassName("campBlock");
+		var leftBtn = document.getElementById("navLeft");
+		var rightBtn = document.getElementById("navRight");
+		var blockRow = document.getElementById("blockRow");
+		var slider = document.getElementById("slider");
+		var focus = document.getElementById("focusContainer");
+		var copy = document.getElementsByClassName("copy");
+		var logo = document.getElementById("logoHolder");
+		var rightCount=0;
+		var leftCount=0;
+		var hero = document.getElementById("heroBg");
+		var copyClose = document.getElementById("copyClose");
+		var lastPos;
+		var remainingBlocks=10;
+
+		rightBtn.addEventListener("click", function(){
+			slideRight();
+		});
+		leftBtn.addEventListener("click", function(){
+			slideLeft();
+		});
+
+		function rightScrollAmount(){
+			var totWidth=parseInt(window.getComputedStyle(slider).getPropertyValue("width"));
+			var fullViewBlock = Math.floor(totWidth/275);
+
+			noToScroll=10-fullViewBlock;
+
+			remainingBlocks-=10-noToScroll;
+
+
+			if(rightCount==0){
+
+				pxToScroll=fullViewBlock*275;
+
+			}else if(rightCount==1){
+
+				pxToScroll=(fullViewBlock*275)*2;
+
+			}else if(rightCount==2){
+				pxToScroll=0;
+				rightCount=-1;
+				remainingBlocks=10;
+			}
+
+			if(totWidth<=1105){
+				if(rightCount==1&&remainingBlocks<=noToScroll){
+					// noToScroll=remainingBlocks;
+					// pxToScroll=(noToScroll*275);					
+				}
+			}else{
+				if(rightCount==1&&remainingBlocks<=noToScroll){
+					noToScroll=remainingBlocks;
+					pxToScroll-=(noToScroll*275);
+					
+				}
+			}
+
+			if(remainingBlocks==0){
+				pxToScroll=0;
+				//rightCount=-1;
+			}
+			
+			return pxToScroll;
+		}
+
+		function leftScrollAmount(){
+
+			var totWidth= window.innerWidth;
+			var fullViewBlock = Math.floor(totWidth/275);
+
+			if(rightCount==2){
+				remainingBlocks=6;
+				return lastPos/2;
+
+			}else if(rightCount==1){
+				remainingBlocks=10;
+				return 0;
+			}
+
+		};
+
+		function slideRight(){
+
+			lastPos=rightScrollAmount();
+
+			blockRow.style.transform= 'translate3d(-'+lastPos+'px, 0px, 0px)';
+			if(rightCount<=1){
+				rightCount++;
+			}
+			
+		};
+		function slideLeft(){
+
+			var leftAmount=leftScrollAmount();
+			
+			blockRow.style.transform= 'translate3d(-'+leftAmount+'px, 0px, 0px)';
+			if(rightCount>0){
+				rightCount--;	
+			}else if(rightCount==0){
+				rightCount=0;
+			};
+		};
+
+	</script>
+</body>
+</html>

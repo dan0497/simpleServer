@@ -1,0 +1,478 @@
+body{
+	background-color:#141414;
+	/*background: #141414;*/
+	width:100%;
+	height:200%;
+	overflow-x:hidden;
+	margin:0px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#container{
+	background-color: #282828;
+	margin-left: 2.5%;
+	margin-top: 1%;
+	margin-bottom: 0%;
+	margin-right: 2.5%;
+	height: auto;
+}
+
+.copy{
+	font-size:1vw;
+	color:white;
+	width: 45%;
+	height: 70%;
+	min-height: 350px;
+	min-width: 350px;
+	/*min-height: 392px;*/
+	z-index: 6;
+	left:20px;
+	position: relative;
+	/*background: rgba(0,0,0,0.5);*/
+	margin-top:0px;
+}
+
+.copy h1{
+	margin-bottom: 0px;
+}
+
+.copy img{
+	width:50%;
+}
+
+#heroBg{
+	position: absolute;
+	right:-50px;
+	top:0px;
+	width: 100%;
+	min-width: 1000px;
+	min-height: 335px;
+	height:auto;
+	z-index:0;
+}
+
+#focusContainer{
+	width:90%;
+	height:auto;
+	background-color: black;
+	position: relative;
+	left:5%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+}
+
+#play{
+	position: relative;
+	background-color:red;
+	width: 9vw;
+	height: 2vw;
+	border-radius: 5%;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 110%;
+	padding: 3px;
+}
+
+#play > p{
+	margin-top:2px;
+}
+
+a{
+	text-decoration: none;
+	color:white;
+}
+
+#slider{
+	width:100%;
+	height:200px;
+	left:0%;
+	overflow-x: hidden;
+	position: relative;
+	background-color: black;
+	top:0px;
+}
+
+#rowCont{
+	width:3000px;
+	top: 0px;
+	position: absolute;
+	z-index: 10;
+}
+
+#blockRow{
+	width:100%;
+	position: absolute;
+	transition:all 350ms;
+	left:20px;
+}
+
+#logoHolder{
+	position: relative;
+	width: 300px;
+	height: 100px;
+	/*top:0px;*/
+	margin:auto;
+	background-image: url("images/ftNetflix.png");
+	background-size: cover;
+	z-index: 10;
+}
+
+.campBlock{
+	width:275px;
+	height:172px; 
+	min-width: 210px;
+	min-height:131px;
+	position: relative;
+	float:left;
+	border-style:solid;
+	margin-top:10px;
+	transition: width 0.4s, height 0.4s, margin-top 0.4s, transform 350ms, border 400ms;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	cursor:pointer;
+}
+
+.campBlock:hover{
+	width:310px;
+	height:194px;
+	margin-top:0px;
+	display: inline-block;
+	border-color:white;
+}
+
+.campBlock > a{
+	border:0;
+	background-color: rgba(0,0,0,0);
+}
+
+#block1{
+	background-image: url("images/coke_thumb.jpg");
+}
+#block2{
+	background-image: url("images/mands_thumb.jpg");
+}
+#block3{
+	background-image: url("images/justEat_thumb.jpg");
+}
+#block4{
+	background-image: url("images/tapad_thumb.jpg");
+}
+#block5{
+	background-image: url("images/peugeot_thumb.jpg");
+}
+#block6{
+	background-image: url("images/gillette_thumb.jpg");
+}
+#block7{
+	background-image: url("images/cathay_pacific_thumb.jpg");
+}
+#block8{
+	background-image: url("images/mini_thumb.jpg");
+}
+#block9{
+	background-image: url("images/amex_thumb.jpg");
+}
+#block10{
+	background-image: url("images/monarch_thumb.jpg");
+}
+
+#navContainer{
+	height:150px;
+	width:auto;
+}
+
+.navControl{
+	height:120px;
+	width:40px;
+	background-color: grey;
+	opacity: 0.6;
+	position: absolute;
+	z-index: 35;
+	margin-top: 42.5px;
+	cursor: pointer;
+}
+
+#moreInfo{
+	position: relative;
+	width:auto;
+	height: 25px;
+	margin-top:0px;
+	padding-bottom: 50px;
+	font-size: 1.5vw;
+	color: grey;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#moreInfo > a{
+	text-decoration: none;
+	color:grey;
+}
+
+#copyClose{
+	color: white;
+	position: absolute;
+	top:0px;
+	right:25px;
+	width: 25px;
+	height: 25px;
+	opacity: 0;
+}
+
+#navLeft{
+	left:0px;	
+}
+#navRight{
+	right:0px;
+}
+
+.slideRight{
+	transform: translate3d(-275px, 0px, 0px);
+}
+
+.slideRight2{
+	transform: translate3d(-650px, 0px, 0px);
+}
+
+.slideLeft{
+	transform: translate3d(0px, 0px, 0px);
+}
+
+@media (max-width:1080px){
+	#rowCont{
+		width:100%;
+		height:150px;
+		position: absolute;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		z-index: 12;
+		padding-bottom: 100px;
+		/*left:50px;*/
+	}
+
+	#slider{
+		height: 250px;
+	}
+
+	#blockRow{
+		width:100%;
+		height:150%;
+	}
+
+	#navContainer{
+		display: none;
+	}
+
+	.campBlock:hover{
+		width:275px;
+		height:172px; 
+		margin-top: 10px;
+	}
+}
+
+@media (max-width:900px){
+	#copy{
+		background: rgba(0,0,0,0.8);
+	}
+}
+
+@media only screen 
+and (max-device-width:400px){
+
+	body{
+		width:auto;
+		height: auto;
+		overflow-x:hidden;
+	}
+
+	#container{
+		margin: 0px 0px 0px 0px;
+	}
+
+	#focusContainer{
+		width:100%;
+		height:auto;
+		background-color: black;
+		position: relative;
+		left:0px;
+		overflow-y: hidden;
+	}
+
+	.copy{
+		font-size: 4vw;
+		width: 100%;
+		height:110%;
+		transition: opacity 950ms;
+		left:0px;
+		margin-top:70%;
+	}
+
+	.copy h1{
+		margin-left:5%;
+		margin-right:5%;
+		margin-bottom: 0px;
+	}
+
+	.copy h2{
+		margin-left:5%;
+		margin-right:5%;
+		margin-top: 0px;
+	}
+
+	.copy p{
+		margin-left:5%;
+		margin-right:5%;
+	}
+
+	.copy img{
+		margin-left: 5%;
+		width: 40%;
+	}
+
+	#heroBg{
+		right:-11%;
+		width:200%;
+	}
+
+	#logoHolder{
+		width:600px;
+		height: 200px;
+	}
+
+	#slider{
+		width:100%;
+		height:200px;
+		margin-top: 5%;
+		position: relative;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		z-index: 50;
+		padding-bottom: 100px;
+		left:0.5%;
+		transition: margin-top 0.7s;
+	}
+
+	#rowCont{
+		overflow-y: hidden;
+		overflow-x: scroll;
+	}
+
+	#blockRow{
+		width:4150px;
+	}
+
+	.campBlock{
+		width:400px;
+		height:250px;
+		position: relative;
+		float:left;
+		border-style:solid;
+		margin-top:0px;
+		transition: width 0.4s, height 0.4s, margin-top 0.4s, transform 350ms;
+	}
+
+	.campBlock:hover{
+		width:400px;
+		height:250px;
+		margin-top:0px;
+		display: inline-block;
+		border-color: black;
+	}
+
+	#navContainer{
+		display:none;
+	}
+
+	.navControl{
+		display:none;
+	}
+
+	#play{
+		width:55%;
+		height:10%;
+		left:5%;
+		padding-top:35px;
+	}
+
+
+
+	#revealTap{
+		position: absolute;
+		top:50%;
+		left:25%;
+		background-color:rgba(0,0,0,0.7);
+		color:white;
+		font-size: 5em;
+		border-radius: 2%;
+		z-index: 60;
+	}
+
+	#moreInfo{
+		margin-top: 0%;
+		font-size: 4vw;
+		transition: margin 0.7s;
+		height:70px;
+		
+	}
+
+}
+
+
+/*@media (max-width:600px){
+
+	#focusContainer{
+		width:100%;
+		height:50vh;
+		background-color: white;
+		position: relative;
+		left:0px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: red;
+		top:20px;
+	}
+
+	#blockRow{
+		width:800%;
+		height:40vh;
+		margin-top: 25px;
+		overflow-x: scroll;
+	}
+
+	.campBlock{
+		width:90vw;
+		height:40vh;
+		background-color: white;
+		position: relative;
+		float:left;
+		border-style:solid;
+		margin-top:25px;
+		transition: width 0.4s, height 0.4s, margin-top 0.4s, transform 350ms;
+	}
+
+	.campBlock:hover{
+		width:90vw;
+		height:40vh;
+		margin-top:25px;
+		display: inline-block;
+	}
+
+	#navContainer{
+		height:45vh;
+		width:auto;
+	}
+
+	.navControl{
+		height:120px;
+		width:40px;
+		background-color: red;
+		position: absolute;
+		z-index: 5;
+		margin-top: 42.5px;
+		border-style:solid;
+	}
+}
+*/
